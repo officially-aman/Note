@@ -41,7 +41,4 @@ class Get_Started : AppCompatActivity() {
             window.statusBarColor = android.graphics.Color.parseColor("#$color")
         }
     }
-
-
-
 }

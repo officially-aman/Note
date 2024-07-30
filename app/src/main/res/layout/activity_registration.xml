@@ -8,50 +8,93 @@
     tools:context=".Registration"
     android:background="@drawable/register_bg">
 
-    <!-- TextInputLayout for Email -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email_text_input_layout"
-        android:layout_width="0dp"
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Register"
+        android:textColor="@color/green"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+
+    <!-- Subtitle Text -->
+    <TextView
+        android:id="@+id/subtitle_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Create a new account"
+        android:textColor="@color/green"
+        android:textSize="25sp"
+        app:layout_constraintTop_toBottomOf="@+id/title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- CardView containing TextInputLayout for Email -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/email_card_view"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="-100dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="350dp"
-        android:hint="Email"
-        app:hintTextColor="#013220"
-        app:boxStrokeColor="#013220"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
         app:layout_constraintBottom_toTopOf="@+id/get_started_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        app:layout_constraintHorizontal_bias="0.5">
+        app:layout_constraintTop_toBottomOf="@+id/subtitle_text"
+        app:layout_constraintVertical_bias="0.4">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email_input"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_text_input_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:importantForAccessibility="yes"
-            android:inputType="textEmailAddress"
-            android:textColor="#013220"
-            android:textColorHint="#6A6A6A"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_text_input"
+            android:hint="Email"
+            app:boxStrokeColor="#013220"
+            app:hintTextColor="#013220">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="yes"
+                android:inputType="textEmailAddress"
+                android:textColor="#013220"
+                android:textColorHint="#6A6A6A" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
 
     <!-- Button -->
     <Button
         android:id="@+id/get_started_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="192dp"
         android:backgroundTint="#013220"
+        android:padding="12dp"
         android:text="Get Started"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:padding="12dp"
-        app:cornerRadius="8dp"
-        app:rippleColor="#03af70"
-        app:tint="#000000"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"/>
+        app:rippleColor="#03af70"
+        app:tint="#000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
